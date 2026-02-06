@@ -1,7 +1,7 @@
 // Imports
 import express from "express";
 import { logReq, globalErr } from "./middleware/middleware.js";
-//import dotenv from 'dotenv';
+import seedRoutes from "./routes/seedRoutes.js";
 import dotenv from "dotenv";
 
 // Setups
@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(logReq);
 
 // Routes
+app.use("/api/seed", seedRoutes);
+
 
 // Global middleware
 app.use(globalErr);

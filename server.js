@@ -2,6 +2,7 @@
 import express from "express";
 import { logReq, globalErr } from "./middleware/middleware.js";
 import seedRoutes from "./routes/seedRoutes.js";
+import bandRoutes from "./routes/bandRoutes.js";
 import dotenv from "dotenv";
 
 // Setups
@@ -15,6 +16,7 @@ app.use(logReq);
 
 // Routes
 app.use("/api/seed", seedRoutes);
+app.use("/api/bands", bandRoutes);
 
 
 // Global middleware

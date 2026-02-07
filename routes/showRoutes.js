@@ -3,11 +3,11 @@ import db from "../db/conn.js"
 
 const router = express.Router();
 
-// Get all Bands
+// Get all TV Shows
 router.get("/",async (req,res) =>  {
 
     // Specify/Choose Collection
-    const collection = db.collection("bands");
+    const collection = db.collection("shows");
 
     // Perform Action 
     let getall = await collection.find({}).sort("name", 1).toArray();

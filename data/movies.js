@@ -60,3 +60,5 @@ const movies = [
     genre: "Drama",
   },
 ];
+
+export default movies;

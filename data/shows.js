@@ -60,3 +60,5 @@ const tvShows = [
     genre: "Science Fiction",
   },
 ];
+
+export default shows;

@@ -3,6 +3,8 @@ import express from "express";
 import { logReq, globalErr } from "./middleware/middleware.js";
 import seedRoutes from "./routes/seedRoutes.js";
 import bandRoutes from "./routes/bandRoutes.js";
+import movieRoutes from "./routes/movieRoutes.js";
+import showRoutes from "./routes/showRoutes.js";
 import dotenv from "dotenv";
 
 // Setups
@@ -17,6 +19,8 @@ app.use(logReq);
 // Routes
 app.use("/api/seed", seedRoutes);
 app.use("/api/bands", bandRoutes);
+app.use("/api/movies", movieRoutes);
+app.use("/api/shows", showRoutes);
 
 
 // Global middleware

@@ -61,4 +61,4 @@ const tvShows = [
   },
 ];
 
-export default shows;
+export default tvShows;

@@ -1,6 +1,7 @@
 import express from "express"
 import bandData from "../data/bands.js"
 import movieData from "../data/movies.js"
+import showData from "../data/shows.js"
 import db from "../db/conn.js"
 
 const router = express.Router();
@@ -36,15 +37,28 @@ router.get("/", async (req, res) =>{
     await MovieCollection.createIndex({ name : 1});
     await MovieCollection.createIndex({ released : 1});
 
+     // ************* TV Shows ************************
+
+      // TV Shows - delete any data already present
+    await ShowCollection.deleteMany({});
+
+    // TV Shows - populate the data
+    await ShowCollection.insertMany(showData);
+
+    // TV Shows - create index's
+    await ShowCollection.createIndex({ name : 1});
+    await ShowCollection.createIndex({ released : 1});
+
     res.json({
         message: "The bands, movies, and shows were seeded",
         bandcount: "The band count was " + bandData.length,
-        moviecount: "The movie count was " + movieData.length
+        moviecount: "The movie count was " + movieData.length,
+        showcount: "The show count was " + showData.length
     })
 
     } catch (error) {
         console.error(error.message);
-        res.status(500).json;
+        res.status(500).json({ Error: "Something went wrong with the seeding process" });
     }
 
 })

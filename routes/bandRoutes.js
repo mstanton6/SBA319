@@ -17,8 +17,26 @@ router.get("/",async (req,res) =>  {
 
 })
 
+// POST for a Band
+
+router.post("/", async (req, res) => {
+
+    const input = req.body;
+    // Validation
+    if(!input || typeof input.name != 'string' || typeof input.description != 'string' || typeof input.formed != 'number' || typeof input.genre != 'string') {
+       res.json("There is a data type issue with the data you are inserting"); 
+       return;
+    }
+    
     // Specify/Choose Collection
-    // Perform Action - insertOne
+    const BandCollection = db.collection("bands");
+
+    // Perform Action 
+    let newband  = await BandCollection.insertOne(req.body);
+
     // Return results
+    res.json(newband);
+
+})
 
 export default router;

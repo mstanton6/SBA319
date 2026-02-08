@@ -1,6 +1,6 @@
 import express from "express"
-import data from "../data/movies.js"
 import db from "../db/conn.js"
+import { ObjectId } from 'mongodb';
 
 const router = express.Router();
 
@@ -18,8 +18,24 @@ router.get("/",async (req,res) =>  {
 
 })
 
+// Patch for a movie
+router.patch("/:id", async (req, res) => {
+    
     // Specify/Choose Collection
-    // Perform Action - insertOne
+    const MovieCollection = db.collection("movies");
+
+    // Perform Action 
+    let updmovie = await MovieCollection.updateOne(
+        { "_id": new ObjectId(req.params.id)}, 
+        { $set: {  "name": req.body.name,
+          "description": req.body.description,
+          "released": req.body.released,
+          "genre": req.body.genre
+        }}
+    )
     // Return results
+    res.json(updmovie);
+
+})
 
 export default router;

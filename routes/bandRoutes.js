@@ -22,6 +22,7 @@ router.get("/",async (req,res) =>  {
 router.post("/", async (req, res) => {
 
     const input = req.body;
+    
     // Validation
     if(!input || typeof input.name != 'string' || typeof input.description != 'string' || typeof input.formed != 'number' || typeof input.genre != 'string') {
        res.json("There is a data type issue with the data you are inserting"); 

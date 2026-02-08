@@ -1,5 +1,7 @@
 import express from "express"
 import db from "../db/conn.js"
+import { ObjectId } from 'mongodb';
+
 
 const router = express.Router();
 
@@ -17,9 +19,19 @@ router.get("/",async (req,res) =>  {
 
 })
 
-    // Delete for a show
+// Delete for a show
+router.delete("/:id", async (req, res) => {
+    
     // Specify/Choose Collection
-    // Perform Action - insertOne
+    const ShowCollection = db.collection("shows");
+
+    // Perform Action 
+    let delshow = await ShowCollection.deleteOne(
+        { "_id": new ObjectId(req.params.id)} 
+    )
     // Return results
+    res.json(delshow);
+
+})
 
 export default router;

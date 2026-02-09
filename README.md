@@ -1,8 +1,8 @@
 # My Application Name and description
- This is a MongoDB Database Application. It supports 4 routes (bands, movies, shows and seed). It follows the CRUD model for create, read, update, and delete. The seed route seeds bands, movies, and TV shows all at the same time. The seed also creates index's for all three routes.
+ This is a MongoDB Database Application. It supports 4 routes (bands, movies, shows and seed). It follows the CRUD model for create, read, update, and delete. The seed route seeds bands, movies, and TV shows all at the same time. The seed also creates indexes for all three routes.
 
 
-HOW TO START
+How to Start
 ============
 You start the server by "npm run dev"
 
@@ -17,7 +17,7 @@ localhost:3001/movies
 localhost:3001/shows
 
 
-Special functions (only avaliable in certain routes)
+2. Special functions (only available in certain routes)
 -------------
 Route               Access by                   method      Outcome
 =====               =========                   ======      =======
@@ -25,7 +25,7 @@ bandRoute           localhost:3001/bands        POST        Add a new band
 
 movieRoutes         localhost:3001/movies/:id   PATCH       Update a movie
 
-showRoutes         localhost:3001/shows/:id    DELETE      Delete a show
+showRoutes          localhost:3001/shows/:id    DELETE      Delete a show
 
 # Technologies Used:
 
@@ -55,15 +55,19 @@ To use this project locally:
 
 1.  **Clone the repository:**
 
-    git clone https://github.com/mstanton6/SBA318.git
+    git clone https://github.com/mstanton6/SBA319.git
     
 2.  **Navigate to the project directory:**
 
     cd SBA319
     
-3.  Run "npm run dev"
+3.  ** Run dependencies 
 
-4.  Open a browser or Postman and go to localhost:3001
+    npm install
+
+4. Run "npm run dev"
+
+5.  Open a browser or Postman and go to localhost:3001
 
 # Contributions
 - Thank you to the following for making contributions to my project       

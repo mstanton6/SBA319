@@ -1,6 +1,8 @@
 # My Application Name and description
  This is a MongoDB Database Application. It supports 4 routes (bands, movies, shows and seed). It follows the CRUD model for create, read, update, and delete. The seed route seeds bands, movies, and TV shows all at the same time. The seed also creates indexes for all three routes.
 
+ Note: I added a validator (models\bandSchema.js) for the bands collection. However, I didn't have time to implement or test it.
+
 
 How to Start
 ============
@@ -76,3 +78,5 @@ To use this project locally:
 2. https://www.google.com/
 
 3. https://stackoverflow.com/
+
+4. https://www.mongodb.com/docs
